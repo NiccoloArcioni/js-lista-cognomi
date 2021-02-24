@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Nomi</title>
+    <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+    
+    <!-- contenitore -->
+    <div class="ms_surname_container">
+        <label>Inserisci il tuo cognome</label>
+        <input type="text" name="surname" id="surname" placeholder="Inserisci cognome">
+        <input type="submit" value="Invia" id="submit">
+        <input type="reset" value="Ripulisci lista" id="reset">
+
+    
+        <!-- display lista ordinata cognomi -->
+        <h2 id="ms_list_title">Lista ordinata dei cognomi</h2>
+        <ul id="ms_surname_list">
+
+        </ul>
+
+        <!-- display posizione cognome nella lista ordinata -->
+        <h3 id="ms_user_surname_position"></h3>
+    </div>
+
+    <script src="js/main.js"
+    ></script>
+</body>
+</html>

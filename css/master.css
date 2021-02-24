@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ms_surname_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.ms_surname_container input {
+    text-align: center;
+    padding: 5px 40px;
+    margin: 15px 0;
+}
+
+#ms_list_title {
+    display: none;
+}
+
+#ms_surname_list {
+    list-style: decimal;
+    margin: 20px 0;
+}
+
+#ms_surname_list li {
+    margin: 10px 0;
+}
