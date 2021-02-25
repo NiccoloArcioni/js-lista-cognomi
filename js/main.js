@@ -32,6 +32,9 @@ submit.addEventListener('click',
             //in caso di succevvive aggiunte di cognomi cancella la precendente lista
             document.getElementById('ms_surname_list').innerHTML = ' ';
 
+            //trasforma l'input mettendo la prima lettera maiuscola e il resto minuscolo
+            userSurname = userSurname.charAt(0).toUpperCase() + userSurname.slice(1).toLowerCase();
+
             //aggiunta cognome utente all'array
             surnameList.push(userSurname);
             
@@ -39,13 +42,7 @@ submit.addEventListener('click',
             var surnameListSorted = surnameList.slice();
             
             //sort ordine alfabetico del secondo array
-            surnameListSorted.sort(function (a, b) {
-                a = a.toUpperCase();
-                b = b.toUpperCase();
-                if (a == b) return 0;
-                if (a > b) return 1;
-                return -1;
-            })
+            surnameListSorted.sort();
             console.log(surnameListSorted);
             
             //display titolo della lista
@@ -56,7 +53,7 @@ submit.addEventListener('click',
             
             // stampa lista cognomi ordinata e ricerca posizione utente
             for(var i = 0; i < surnameListSorted.length; i++) {
-                document.getElementById('ms_surname_list').innerHTML += "<li class = \"ms_text_capitalize\">" + surnameListSorted[i] + "</li>";
+                document.getElementById('ms_surname_list').innerHTML += "<li>" + surnameListSorted[i] + "</li>";
                 if(surnameListSorted[i] === userSurname) {
                     document.getElementById('ms_user_surname_position').innerHTML = userSurname + " sei in posizione " + userPosition;
                 } else {
@@ -79,3 +76,4 @@ reset.addEventListener('click',
         location.reload();
     }
 );
+

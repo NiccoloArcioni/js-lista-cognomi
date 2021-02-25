@@ -28,6 +28,3 @@
 #ms_surname_list li {
     margin: 10px 0;
 }
-#ms_surname_list li.ms_text_capitalize {
-    text-transform: capitalize;
-}
