@@ -7,26 +7,23 @@ var surnameList = [
     "Verdi"
 ];
 
-//variabile posizione utente
-var userPosition = 1;
-
 //variabile titolo lista
 var listTitle = document.getElementById('ms_list_title');
 
-// inizializzazione variabile form input
+// variabile form input
 var userInputForm = document.getElementById('surname');
 
-//inizializzazione variabile submit
+// variabile submit
 var submit = document.getElementById('submit');
 
-//inizializzazione variabile reset
+// variabile reset
 var reset = document.getElementById('reset');
 
 
 submit.addEventListener('click',
     function () {
 
-        // inizializzazione variabile cognome utente
+        //  variabile cognome utente
         var userSurname = document.getElementById('surname').value;
         console.log(userSurname);
 
@@ -37,10 +34,10 @@ submit.addEventListener('click',
 
             //aggiunta cognome utente all'array
             surnameList.push(userSurname);
-    
+            
             //copia array con cognomi da ordinare 
             var surnameListSorted = surnameList;
-    
+            
             //sort ordine alfabetico del secondo array
             surnameListSorted.sort(function (a, b) {
                 a = a.toLowerCase();
@@ -49,12 +46,14 @@ submit.addEventListener('click',
                 if (a > b) return 1;
                 return -1;
             })
-    
+            
+            //variabile posizione utente e reset posizione utente per successivi inserimenti
+            var userPosition = 1;
+
+            //display titolo della lista
             console.log(surnameListSorted);
             listTitle.style.display = "block";
-    
-            //display titolo della lista
-    
+            
             // stampa lista cognomi ordinata e ricerca posizione utente
             for(var i = 0; i < surnameListSorted.length; i++) {
                 document.getElementById('ms_surname_list').innerHTML += "<li>" + surnameListSorted[i] + "</li>";
@@ -64,12 +63,10 @@ submit.addEventListener('click',
                     userPosition += 1;
                 }
             }
-    
-            //reset posizione utente per successivi inserimenti
-            userPosition = 1;
-    
+            
             //ripulire l'input
             userInputForm.value = '';
+
         } else {
             alert("Inserisci un cognome valido");
         }
