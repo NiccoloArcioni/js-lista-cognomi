@@ -36,27 +36,27 @@ submit.addEventListener('click',
             surnameList.push(userSurname);
             
             //copia array con cognomi da ordinare 
-            var surnameListSorted = surnameList;
+            var surnameListSorted = surnameList.slice();
             
             //sort ordine alfabetico del secondo array
             surnameListSorted.sort(function (a, b) {
-                a = a.toLowerCase();
-                b = b.toLowerCase();
+                a = a.toUpperCase();
+                b = b.toUpperCase();
                 if (a == b) return 0;
                 if (a > b) return 1;
                 return -1;
             })
+            console.log(surnameListSorted);
+            
+            //display titolo della lista
+            listTitle.style.display = "block";
             
             //variabile posizione utente e reset posizione utente per successivi inserimenti
             var userPosition = 1;
-
-            //display titolo della lista
-            console.log(surnameListSorted);
-            listTitle.style.display = "block";
             
             // stampa lista cognomi ordinata e ricerca posizione utente
             for(var i = 0; i < surnameListSorted.length; i++) {
-                document.getElementById('ms_surname_list').innerHTML += "<li>" + surnameListSorted[i] + "</li>";
+                document.getElementById('ms_surname_list').innerHTML += "<li class = \"ms_text_capitalize\">" + surnameListSorted[i] + "</li>";
                 if(surnameListSorted[i] === userSurname) {
                     document.getElementById('ms_user_surname_position').innerHTML = userSurname + " sei in posizione " + userPosition;
                 } else {
